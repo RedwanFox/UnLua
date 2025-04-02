@@ -34,7 +34,7 @@ namespace UnLua
 
     UNLUA_API TArray<IExportedFunction*> GetExportedFunctions();
 
-    UNLUA_API IExportedClass* FindExportedClass(FString Name);
+    UNLUA_API IExportedClass* FindExportedClass(const FString& Name);
 
     UNLUA_API IExportedClass* FindExportedReflectedClass(FString Name);
 

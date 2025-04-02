@@ -16,6 +16,8 @@
 
 #include "CoreUObject.h"
 #include "Misc/EngineVersionComparison.h"
+#include "Templates/ChooseClass.h"
+
 #include <type_traits>
 
 namespace UnLua
@@ -91,7 +93,8 @@ namespace UnLua
     template <typename T> struct TArgTypeTraits
     {
         typedef typename TDecay<T>::Type RT;
-        typedef typename TChooseClass<TIsPrimitiveTypeOrPointer<RT>::Value, RT, typename std::remove_cv<T>::type>::Result Type;
+        typedef typename TChooseClass<TIsPrimitiveTypeOrPointer<RT>::Value, RT,
+                                      typename std::remove_cv<T>::type>::Result Type;
     };
     
     

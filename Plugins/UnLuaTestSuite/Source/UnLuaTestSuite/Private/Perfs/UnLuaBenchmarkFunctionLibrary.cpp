@@ -15,6 +15,7 @@
 #include "Perfs/UnLuaBenchmarkFunctionLibrary.h"
 #include "Misc/DateTime.h"
 #include "Misc/FileHelper.h"
+#include "Misc/Paths.h"
 
 double UUnLuaBenchmarkFunctionLibrary::StartTime;
 FString UUnLuaBenchmarkFunctionLibrary::StartTitle;

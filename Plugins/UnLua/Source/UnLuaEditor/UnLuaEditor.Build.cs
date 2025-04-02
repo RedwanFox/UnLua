@@ -19,11 +19,7 @@ public class UnLuaEditor : ModuleRules
 {
     public UnLuaEditor(ReadOnlyTargetRules Target) : base(Target)
     {
-#if UE_5_2_OR_LATER
         IWYUSupport = IWYUSupport.None;
-#else
-        bEnforceIWYU = false;
-#endif
 
         PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
@@ -63,9 +59,7 @@ public class UnLuaEditor : ModuleRules
                 "CoreUObject",
                 "Engine",
                 "UnrealEd",
-#if UE_5_0_OR_LATER
                 "DeveloperToolSettings",
-#endif
                 "EditorStyle",
                 "ApplicationCore",
                 "Projects",

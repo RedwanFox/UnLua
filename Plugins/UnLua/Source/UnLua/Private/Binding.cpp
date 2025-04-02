@@ -76,7 +76,7 @@ namespace UnLua
         return GetExported()->Functions;
     }
 
-    IExportedClass* FindExportedClass(const FString Name)
+    IExportedClass* FindExportedClass(const FString& Name)
     {
         auto Class = GetExported()->ReflectedClasses.FindRef(Name);
         if (Class)

@@ -37,6 +37,11 @@ function M:ReceiveBeginPlay()
 	FloatTrack.InterpFunc:Bind(self, M.OnZoomInOutUpdate)
 end
 
+function M:ReceiveTick(Delta)
+    local msg = [[ Tick ]]
+    print(msg)
+end
+
 function M:ReceiveDestroyed()
 	UE.UKismetSystemLibrary.K2_ClearTimerHandle(self, self.TimerHandle)
 end

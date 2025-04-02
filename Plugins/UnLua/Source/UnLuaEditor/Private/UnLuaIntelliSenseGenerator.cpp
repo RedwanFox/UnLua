@@ -14,19 +14,16 @@
 
 #include "Misc/EngineVersionComparison.h"
 #include "UnLuaIntelliSenseGenerator.h"
-#if UE_VERSION_NEWER_THAN(5, 1, 0)
 #include "AssetRegistry/AssetRegistryModule.h"
-#else
-#include "AssetRegistryModule.h"
-#endif
+#include "AssetRegistry/AssetData.h"
+#include "Blueprint/WidgetTree.h"
 #include "CoreUObject.h"
+#include "Engine/Blueprint.h"
+#include "Interfaces/IPluginManager.h"
 #include "UnLua.h"
 #include "UnLuaEditorSettings.h"
 #include "UnLuaIntelliSense.h"
 #include "WidgetBlueprint.h"
-#include "Blueprint/WidgetTree.h"
-#include "Engine/Blueprint.h"
-#include "Interfaces/IPluginManager.h"
 
 #define LOCTEXT_NAMESPACE "UnLuaIntelliSenseGenerator"
 

@@ -440,7 +440,8 @@ namespace UnLua
         const int Actual = lua_gettop(L); 
         if (Actual < Expected)
         {
-            UE_LOG(LogUnLua, Warning, TEXT("Attempted to call constructor of %s with invalid arguments. %d expected but got %d."), *TType<ClassType>::GetName(), Expected, Actual);
+            const FString TypeName = TType<ClassType>::GetName();
+            UE_LOG(LogUnLua, Warning, TEXT("Attempted to call constructor of %s with invalid arguments. %d expected but got %d."),*TypeName , Expected, Actual);
             return 0;
         }
 

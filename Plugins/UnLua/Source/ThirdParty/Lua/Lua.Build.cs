@@ -19,19 +19,15 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
-#if UE_5_0_OR_LATER
 using EpicGames.Core;
-#else
-using Tools.DotNETCommon;
-#endif
 using UnrealBuildTool;
 
 public class Lua : ModuleRules
 {
     public Lua(ReadOnlyTargetRules Target) : base(Target)
     {
-        Type = ModuleType.External;
-        bEnableUndefinedIdentifierWarnings = false;
+        Type = ModuleType.External; 
+        // bEnableUndefinedIdentifierWarnings = false;
         ShadowVariableWarningLevel = WarningLevel.Off;
 
         m_LuaVersion = GetLuaVersion();
@@ -442,12 +438,8 @@ public class Lua : ModuleRules
                 return "Ninja";
             if (Target.Platform.IsInGroup(UnrealPlatformGroup.Windows))
             {
-                if (Target.WindowsPlatform.Compiler == WindowsCompiler.VisualStudio2019)
-                    return "Visual Studio 16 2019";
-#if UE_4_27_OR_LATER
                 if (Target.WindowsPlatform.Compiler == WindowsCompiler.VisualStudio2022)
                     return "Visual Studio 17 2022";
-#endif
             }
         }
 
